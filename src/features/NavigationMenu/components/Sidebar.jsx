@@ -453,6 +453,53 @@ const sidebarMenus = {
       ],
     },
   ],
+  "Why Muslims": [
+    {
+      name: "Call Management",
+      icon: IoIosCall,
+      link: "callmanagement",
+      submenu: [
+        { name: "GA Calls", link: "gacalls" },
+        {
+          name: "Calls",
+          link: "calls",
+        },
+        { name: "E-Checking", link: "e-checking" },
+        { name: "Balance ", link: "balance " },
+        { name: "No Show", link: "noshow" },
+        { name: "Voice Message", link: "voicemessage" },
+        { name: "Frontdesk tracking", link: "frontdesktracking" },
+        { name: "Medical Record", link: "medicalrecord" },
+        { name: "IT Support", link: "itsupport" },
+      ],
+    },
+    {
+      name: "Reporting",
+      icon: BarChart,
+      link: "reporting",
+    },
+    {
+      name: "WNY",
+      icon: Building2,
+      link: "wny",
+      submenu: [
+        { name: "Rental Assistance", link: "rentalassistance" },
+        { name: "Half Development", link: "halfdevelopment" },
+        { name: "Desi Virsa", link: "desivirsa" },
+        { name: "Apna Dera", link: "apnadera" },
+      ],
+    },
+    {
+      name: "Maaz",
+      icon: Building2,
+      link: "maaz",
+      submenu: [
+        { name: "Quality Assurance", link: "qualityassurance" },
+        { name: "HCO", link: "hco" },
+        { name: "Voice Message", link: "Voice Message" },
+      ],
+    },
+  ],
 };
 // Call Center
 //                 --->Call Group
@@ -469,6 +516,7 @@ const slugToDepartment = {
   medicalbilling: "Medical Billing",
   credentialing: "Credentialing",
   priorauthorization: "Prior Authorization",
+  whymuslims: "Why Muslims"
 };
 
 const DynamicSidebar = () => {
