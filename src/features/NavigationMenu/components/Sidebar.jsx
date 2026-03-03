@@ -25,6 +25,11 @@ import {
   Bandage,
   Archive,
   Copy,
+  Album,
+  Hospital,
+  HeartPlus,
+  Trash,
+  Briefcase,
 } from "lucide-react";
 // lucide-react (modern + clean UI)
 import {
@@ -65,6 +70,30 @@ import { MdOutlineCallMade } from "react-icons/md";
 /* ================= MENU CONFIG ================= */
 const sidebarMenus = {
   Administration: [
+    {
+      name: "Call Management",
+      icon: IoIosCall,
+      link: "callmanagement",
+      submenu: [
+        { name: "GA Calls", link: "gacalls" },
+        {
+          name: "Calls",
+          link: "calls",
+        },
+        { name: "E-Checking", link: "e-checking" },
+        { name: "Balance ", link: "balance " },
+        { name: "No Show", link: "noshow" },
+        { name: "Voice Message", link: "voicemessage" },
+        { name: "Frontdesk tracking", link: "frontdesktracking" },
+        { name: "Medical Record", link: "medicalrecord" },
+        { name: "IT Support", link: "itsupport" },
+      ],
+    },
+    {
+      name: "Reporting",
+      icon: BarChart,
+      link: "reporting",
+    },
     { name: "Dashboard", icon: Settings, link: "dashboard" },
     {
       name: "Reports",
@@ -98,7 +127,11 @@ const sidebarMenus = {
         { name: "IT Support", link: "itsupport" },
       ],
     },
-
+    {
+      name: "Reporting",
+      icon: BarChart,
+      link: "reporting",
+    },
     {
       name: "Tracking",
       icon: BarChart3,
@@ -153,6 +186,30 @@ const sidebarMenus = {
   ],
 
   "Control Pannel": [
+    {
+      name: "Call Management",
+      icon: IoIosCall,
+      link: "callmanagement",
+      submenu: [
+        { name: "GA Calls", link: "gacalls" },
+        {
+          name: "Calls",
+          link: "calls",
+        },
+        { name: "E-Checking", link: "e-checking" },
+        { name: "Balance ", link: "balance " },
+        { name: "No Show", link: "noshow" },
+        { name: "Voice Message", link: "voicemessage" },
+        { name: "Frontdesk tracking", link: "frontdesktracking" },
+        { name: "Medical Record", link: "medicalrecord" },
+        { name: "IT Support", link: "itsupport" },
+      ],
+    },
+    {
+      name: "Reporting",
+      icon: BarChart,
+      link: "reporting",
+    },
     {
       name: "Company",
       icon: Building2,
@@ -500,6 +557,86 @@ const sidebarMenus = {
       ],
     },
   ],
+  "Patient Care Coordination": [
+    {
+      name: "Call Management",
+      icon: IoIosCall,
+      link: "callmanagement",
+      submenu: [
+        { name: "GA Calls", link: "gacalls" },
+        {
+          name: "Calls",
+          link: "calls",
+        },
+        { name: "E-Checking", link: "e-checking" },
+        { name: "Balance ", link: "balance " },
+        { name: "No Show", link: "noshow" },
+        { name: "Voice Message", link: "voicemessage" },
+        { name: "Frontdesk tracking", link: "frontdesktracking" },
+        { name: "Medical Record", link: "medicalrecord" },
+        { name: "IT Support", link: "itsupport" },
+      ],
+    },
+    {
+      name: "Reporting",
+      icon: BarChart,
+      link: "reporting",
+    },
+    {
+      name: "Discrepancy",
+      icon: Album,
+      link: "discrepancy",
+    },
+    {
+      name: "Tracking",
+      icon: Truck,
+      link: "tracking",
+      submenu: [
+        { name: "Pre and Post", link: "preandpost" },
+        { name: "Wellness Visit", link: "wellnessvisit" },
+      ],
+    },
+    {
+      name: "HO-FU",
+      icon: Hospital,
+      link: "hofu",
+    },
+    {
+      name: "Medical Claiming",
+      icon: HeartPlus,
+      link: "medicalclaiming",
+    },
+    {
+      name: "Document Bin",
+      icon: Trash,
+      link: "documentbin",
+    },
+    {
+      name: "Working",
+      icon: Briefcase,
+      link: "working",
+      submenu: [
+        { name: "Summary", link: "summary" },
+        { name: "Live Dashboard", link: "livedashboard" },
+      ],
+    },
+    {
+      name: "View",
+      icon: Eye,
+      link: "view",
+      submenu: [
+        { name: "New Account", link: "newaccount" },
+        { name: "Assign by", link: "assignby" },
+        { name: "Location", link: "location" },
+        { name: "Provider", link: "provider" },
+        { name: "Location + Provider", link: "locationandprovider" },
+        { name: "Applicable Category", link: "applicable category" },
+        { name: "Surgery Type", link: "surgery type" },
+        { name: "Lab Test", link: "labtest" },
+        { name: "Management", link: "management" },
+      ],
+    },
+  ],
 };
 // Call Center
 //                 --->Call Group
@@ -516,7 +653,8 @@ const slugToDepartment = {
   medicalbilling: "Medical Billing",
   credentialing: "Credentialing",
   priorauthorization: "Prior Authorization",
-  whymuslims: "Why Muslims"
+  whymuslims: "Why Muslims",
+  patientcarecoordination: "Patient Care Coordination",
 };
 
 const DynamicSidebar = () => {

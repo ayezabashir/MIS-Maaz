@@ -9,6 +9,7 @@ import MedicalBillingRoutes from "./features/MedicalBilling/routes/MedicalBillin
 import CredentialingRoutes from "./features/Credentialing/routes/CredentialingRoutes";
 import PriorAuthorizationRoutes from "./features/PriorAuthorization/routes/PriorAuthorizationRoutes";
 import WhyMuslimsRoutes from "./features/WhyMuslims/routes/WhyMuslimsRoutes";
+import PatientCareCoordinationRoutes from "./features/PatientCareCoordination/routes/PatientCareCoordinationRoutes";
 
 // Lazy load pages and layouts
 const Login = lazy(() => import("./auth/Login"));
@@ -89,6 +90,10 @@ const AppRoutes = () => {
             element={<PriorAuthorizationRoutes />}
           />
           <Route path="/whymuslims/*" element={<WhyMuslimsRoutes />} />
+          <Route
+            path="/patientcarecoordination/*"
+            element={<PatientCareCoordinationRoutes />}
+          />
         </Route>
 
         {/* 🔹 Catch all unknown routes */}
