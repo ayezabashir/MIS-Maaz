@@ -3,17 +3,30 @@ import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./Protectedroute";
 import { Loader2Icon } from "lucide-react";
+import ARroutes from "./features/AR/routes/ARroutes";
 
 // Lazy load pages and layouts
 const Login = lazy(() => import("./auth/Login"));
 const DashboardLayout = lazy(() => import("./features/Layout/MainLayout"));
-const DepartmentLayout = lazy(() => import("./features/Layout/DepartmentLayout"));
+const DepartmentLayout = lazy(
+  () => import("./features/Layout/DepartmentLayout"),
+);
 const MainScreen = lazy(() => import("./features/Dashboard/pages/MainScreen"));
-const AdminRoutes = lazy(() => import("./features/Administartion/routes/AdminRoutes"));
-const DashboardRoutes = lazy(() => import("./features/Dashboard/routes/Dashboardroutes"));
-const ControlPannelRoutes = lazy(() => import("./features/ControlPannel/routes/ControlPannelRoutes"));
-const CallCenterRoutes = lazy(() => import("./features/CallCenter/routes/CallCenterRoutes"));
-const ProfileData = lazy(() => import("./features/NavigationMenu/components/ProfileData"));
+const AdminRoutes = lazy(
+  () => import("./features/Administartion/routes/AdminRoutes"),
+);
+const DashboardRoutes = lazy(
+  () => import("./features/Dashboard/routes/Dashboardroutes"),
+);
+const ControlPannelRoutes = lazy(
+  () => import("./features/ControlPannel/routes/ControlPannelRoutes"),
+);
+const CallCenterRoutes = lazy(
+  () => import("./features/CallCenter/routes/CallCenterRoutes"),
+);
+const ProfileData = lazy(
+  () => import("./features/NavigationMenu/components/ProfileData"),
+);
 const Commingsoon = lazy(() => import("./Commingsoon"));
 const Loader = () => (
   <div className="flex justify-center items-center h-screen">
@@ -27,7 +40,6 @@ const AppRoutes = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
-
         {/* 🔓 LOGIN */}
         <Route path="/" element={<Login />} />
 
@@ -63,6 +75,7 @@ const AppRoutes = () => {
           <Route path="/dashboard/*" element={<DashboardRoutes />} />
           <Route path="/controlpannel/*" element={<ControlPannelRoutes />} />
           <Route path="/callcenter/*" element={<CallCenterRoutes />} />
+          <Route path="/ar/*" element={<ARroutes />} />
         </Route>
 
         {/* 🔹 Catch all unknown routes */}

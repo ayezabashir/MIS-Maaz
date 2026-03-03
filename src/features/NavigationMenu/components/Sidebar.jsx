@@ -8,21 +8,24 @@ import {
   NotebookPen,
   HelpCircleIcon,
   Building2,
+  Eye,
+  Repeat2,
+  SendIcon,
+  MonitorDot,
+  CircleDollarSign,
+  CircleArrowOutUpLeft,
 } from "lucide-react";
 // lucide-react (modern + clean UI)
 import {
-
   FileText,
   Home,
   ShieldCheck,
   Calendar,
   BarChart,
   History,
-} from "lucide-react"
+} from "lucide-react";
 
 // react-icons
-
-
 
 import { RiQuestionnaireFill, RiSoundModuleFill } from "react-icons/ri";
 import { selectDepartment } from "../../../redux/departmentSlice";
@@ -38,7 +41,6 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-
 } from "@/components/ui/sidebar";
 import {
   Collapsible,
@@ -73,7 +75,8 @@ const sidebarMenus = {
       submenu: [
         { name: "GA Calls", link: "gacalls" },
         {
-          name: "Calls", link: "calls",
+          name: "Calls",
+          link: "calls",
         },
         { name: "E-Checking", link: "e-checking" },
         { name: "Balance ", link: "balance " },
@@ -82,9 +85,6 @@ const sidebarMenus = {
         { name: "Frontdesk tracking", link: "frontdesktracking" },
         { name: "Medical Record", link: "medicalrecord" },
         { name: "IT Support", link: "itsupport" },
-
-
-
       ],
     },
 
@@ -141,7 +141,6 @@ const sidebarMenus = {
     },
   ],
 
-
   "Control Pannel": [
     {
       name: "Company",
@@ -163,10 +162,80 @@ const sidebarMenus = {
         { name: "Employee", link: "employee" },
         { name: "User Creation", link: "usercreate" },
         { name: "User Update", link: "userupdate" },
-
       ],
     },
     { name: "Help", icon: HelpCircleIcon, link: "help" },
+  ],
+  AR: [
+    {
+      name: "Call Management",
+      icon: IoIosCall,
+      link: "callmanagement",
+      submenu: [
+        { name: "GA Calls", link: "gacalls" },
+        {
+          name: "Calls",
+          link: "calls",
+        },
+        { name: "E-Checking", link: "e-checking" },
+        { name: "Balance ", link: "balance " },
+        { name: "No Show", link: "noshow" },
+        { name: "Voice Message", link: "voicemessage" },
+        { name: "Frontdesk tracking", link: "frontdesktracking" },
+        { name: "Medical Record", link: "medicalrecord" },
+        { name: "IT Support", link: "itsupport" },
+      ],
+    },
+    {
+      name: "Reporting",
+      icon: BarChart,
+      link: "reporting",
+    },
+    {
+      name: "View",
+      icon: Eye,
+      link: "view",
+      submenu: [
+        { name: "Insurance", link: "insurance" },
+        { name: "Web Link ", link: "weblinkin " },
+        { name: "Credential status", link: "credentialstatus" },
+        { name: "Schedule", link: "schedule" },
+      ],
+    },
+    {
+      name: "Auto Posting",
+      icon: Repeat2,
+      link: "autoposting",
+    },
+    {
+      name: "Submission",
+      icon: SendIcon,
+      link: "submission",
+    },
+    {
+      name: "Front desk",
+      icon: MonitorDot,
+      link: "frontdesk",
+    },
+    {
+      name: "Personal Balance",
+      icon: CircleDollarSign,
+      link: "personalbalance",
+    },
+    {
+      name: "ESC",
+      icon: CircleArrowOutUpLeft,
+      link: "esc",
+    },
+    {
+      name: "Internal Audit",
+      icon: CircleDollarSign,
+      link: "internalaudit",
+      submenu: [
+        { name: "BRS", link: "brs" },
+        { name: "Reporting ", link: "reporting " },
+      ],
+    },
   ],
 };
 // Call Center
@@ -179,6 +248,7 @@ const slugToDepartment = {
   administration: "Administration",
   callcenter: "Call Center",
   controlpannel: "Control Pannel",
+  ar: "AR",
 };
 
 const DynamicSidebar = () => {
@@ -189,7 +259,7 @@ const DynamicSidebar = () => {
   // Current department based on URL
   const departmentSlug = useMemo(
     () => location.pathname.split("/")[1]?.toLowerCase() || "administration",
-    [location.pathname]
+    [location.pathname],
   );
 
   const departmentName = useMemo(
@@ -197,7 +267,7 @@ const DynamicSidebar = () => {
       selectedDepartment?.name ||
       slugToDepartment[departmentSlug] ||
       "Administration",
-    [selectedDepartment, departmentSlug]
+    [selectedDepartment, departmentSlug],
   );
 
   // Sync Redux when URL changes
@@ -211,14 +281,14 @@ const DynamicSidebar = () => {
   const menus = sidebarMenus[departmentName] || [];
 
   return (
-    <Sidebar className='mt-15'>
+    <Sidebar className="mt-15">
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className='text-xl p-3 mb-2'>
+          <SidebarGroupLabel className="text-xl p-3 mb-2">
             <Link to={`/${departmentSlug}`}>{departmentName}</Link>
           </SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu >
+            <SidebarMenu>
               {menus.map((menu) => {
                 const isActive =
                   menu.link &&
@@ -228,12 +298,12 @@ const DynamicSidebar = () => {
                 if (menu.submenu) {
                   return (
                     <Collapsible key={menu.name} asChild defaultOpen={isActive}>
-                      <SidebarMenuItem  >
+                      <SidebarMenuItem>
                         <CollapsibleTrigger asChild>
-                          <SidebarMenuButton asChild isActive={isActive}  >
+                          <SidebarMenuButton asChild isActive={isActive}>
                             <Link to={`/${departmentSlug}/${menu.link}`}>
                               <menu.icon />
-                              <span className='text-[16px] '>{menu.name}</span>
+                              <span className="text-[16px] ">{menu.name}</span>
                               <ChevronDown className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180" />
                             </Link>
                           </SidebarMenuButton>
@@ -242,7 +312,7 @@ const DynamicSidebar = () => {
                           <SidebarMenuSub>
                             {menu.submenu.map((sub) => {
                               const subActive = location.pathname.includes(
-                                `/${departmentSlug}/${sub.link}`
+                                `/${departmentSlug}/${sub.link}`,
                               );
                               return (
                                 <SidebarMenuSubItem key={sub.name}>
@@ -267,7 +337,11 @@ const DynamicSidebar = () => {
                 // Regular menu without submenu
                 return (
                   <SidebarMenuItem key={menu.name}>
-                    <SidebarMenuButton asChild isActive={isActive} className='text-[16px]'>
+                    <SidebarMenuButton
+                      asChild
+                      isActive={isActive}
+                      className="text-[16px]"
+                    >
                       <Link to={`/${departmentSlug}/${menu.link}`}>
                         <menu.icon />
                         <span>{menu.name}</span>
@@ -283,4 +357,4 @@ const DynamicSidebar = () => {
     </Sidebar>
   );
 };
-export default DynamicSidebar
+export default DynamicSidebar;
