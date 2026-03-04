@@ -27,11 +27,7 @@ const AppRoutes = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
-
-        {/* 🔓 LOGIN */}
         <Route path="/" element={<Login />} />
-
-        {/* 🔐 MAIN DASHBOARD (no sidebar) */}
         <Route
           element={
             <ProtectedRoute>
@@ -50,8 +46,6 @@ const AppRoutes = () => {
             }
           />
         </Route>
-
-        {/* 🔐 DEPARTMENTS (with sidebar) */}
         <Route
           element={
             <ProtectedRoute>
@@ -63,9 +57,9 @@ const AppRoutes = () => {
           <Route path="/dashboard/*" element={<DashboardRoutes />} />
           <Route path="/controlpannel/*" element={<ControlPannelRoutes />} />
           <Route path="/callcenter/*" element={<CallCenterRoutes />} />
+          
         </Route>
 
-        {/* 🔹 Catch all unknown routes */}
         <Route
           path="*"
           element={
