@@ -77,6 +77,7 @@ const AppRoutes = () => {
           <Route path="/dashboard/*" element={<DashboardRoutes />} />
           <Route path="/controlpannel/*" element={<ControlPannelRoutes />} />
           <Route path="/callcenter/*" element={<CallCenterRoutes />} />
+
             <Route path="/ar/*" element={<ARroutes/>} />
               <Route path="/credentialing/*" element={<CredentialingRoutes/>} />
                 <Route path="/medicalbilling/*" element={<MedicalBillingRoutes/>} />
@@ -85,6 +86,21 @@ const AppRoutes = () => {
                       <Route path="/PriorAuthorization/*" element={<PriorAuthorizationRoutes/>} />
                         <Route path="/WnyMuslims/*" element={<WnyMuslimsRoutes/>} />
           
+
+ 
+     
+       
+        
+          <Route
+            path="/priorauthorization/*"
+            element={<PriorAuthorizationRoutes />}
+          />
+    
+          <Route
+            path="/patientcarecoordination/*"
+            element={<PatientCareCoordinationRoutes />}
+          />
+
         </Route>
 
         <Route
