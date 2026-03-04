@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import WhyMuslimsMainPage from "../pages/WhyMuslimsMainPage";
 import SettingPage from "@/features/Dashboard/pages/SettingPage";
 
-function WhyMuslimsRoutes() {
+function WnyMuslimsRoutes() {
   return (
     <Routes>
       <Route
@@ -27,4 +27,4 @@ function WhyMuslimsRoutes() {
   );
 }
 
-export default WhyMuslimsRoutes;
+export default WnyMuslimsRoutes;

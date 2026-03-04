@@ -8,7 +8,7 @@ import FaxingRoutes from "./features/Faxing/routes/FaxingRoutes";
 import MedicalBillingRoutes from "./features/MedicalBilling/routes/MedicalBillingRoutes";
 import CredentialingRoutes from "./features/Credentialing/routes/CredentialingRoutes";
 import PriorAuthorizationRoutes from "./features/PriorAuthorization/routes/PriorAuthorizationRoutes";
-import WhyMuslimsRoutes from "./features/WhyMuslims/routes/WhyMuslimsRoutes";
+import WnyMuslimsRoutes from "./features/WhyMuslims/routes/WhyMuslimsRoutes";
 import PatientCareCoordinationRoutes from "./features/PatientCareCoordination/routes/PatientCareCoordinationRoutes";
 
 // Lazy load pages and layouts
@@ -77,6 +77,13 @@ const AppRoutes = () => {
           <Route path="/dashboard/*" element={<DashboardRoutes />} />
           <Route path="/controlpannel/*" element={<ControlPannelRoutes />} />
           <Route path="/callcenter/*" element={<CallCenterRoutes />} />
+            <Route path="/ar/*" element={<ARroutes/>} />
+              <Route path="/credentialing/*" element={<CredentialingRoutes/>} />
+                <Route path="/medicalbilling/*" element={<MedicalBillingRoutes/>} />
+                  <Route path="/faxing/*" element={<FaxingRoutes/>} />
+                    <Route path="/PatientCareCoordination/*" element={<PatientCareCoordinationRoutes/>} />
+                      <Route path="/PriorAuthorization/*" element={<PriorAuthorizationRoutes/>} />
+                        <Route path="/WnyMuslims/*" element={<WnyMuslimsRoutes/>} />
           
         </Route>
 

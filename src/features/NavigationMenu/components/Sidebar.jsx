@@ -510,7 +510,7 @@ const sidebarMenus = {
       ],
     },
   ],
-  "Why Muslims": [
+  "WNY Muslims": [
     {
       name: "Call Management",
       icon: IoIosCall,
@@ -653,7 +653,7 @@ const slugToDepartment = {
   medicalbilling: "Medical Billing",
   credentialing: "Credentialing",
   priorauthorization: "Prior Authorization",
-  whymuslims: "Why Muslims",
+  wnymuslims: "WNY Muslims",
   patientcarecoordination: "Patient Care Coordination",
 };
 
@@ -690,8 +690,8 @@ const DynamicSidebar = () => {
     <Sidebar className="mt-15">
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="text-xl p-3 mb-2">
-            <Link to={`/${departmentSlug}`}>{departmentName}</Link>
+          <SidebarGroupLabel className="text-[15px] text-center p-3 mb-2">
+            <Link className="text-center" to={`/${departmentSlug}`}>{departmentName}</Link>
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
@@ -709,7 +709,7 @@ const DynamicSidebar = () => {
                           <SidebarMenuButton asChild isActive={isActive}>
                             <Link to={`/${departmentSlug}/${menu.link}`}>
                               <menu.icon />
-                              <span className="text-[16px] ">{menu.name}</span>
+                              <span className="text-[14px] ">{menu.name}</span>
                               <ChevronDown className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180" />
                             </Link>
                           </SidebarMenuButton>
