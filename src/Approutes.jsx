@@ -48,8 +48,6 @@ const AppRoutes = () => {
       <Routes>
         {/* 🔓 LOGIN */}
         <Route path="/" element={<Login />} />
-
-        {/* 🔐 MAIN DASHBOARD (no sidebar) */}
         <Route
           element={
             <ProtectedRoute>
@@ -68,8 +66,6 @@ const AppRoutes = () => {
             }
           />
         </Route>
-
-        {/* 🔐 DEPARTMENTS (with sidebar) */}
         <Route
           element={
             <ProtectedRoute>
@@ -81,22 +77,9 @@ const AppRoutes = () => {
           <Route path="/dashboard/*" element={<DashboardRoutes />} />
           <Route path="/controlpannel/*" element={<ControlPannelRoutes />} />
           <Route path="/callcenter/*" element={<CallCenterRoutes />} />
-          <Route path="/ar/*" element={<ARroutes />} />
-          <Route path="/faxing/*" element={<FaxingRoutes />} />
-          <Route path="/medicalbilling/*" element={<MedicalBillingRoutes />} />
-          <Route path="/credentialing/*" element={<CredentialingRoutes />} />
-          <Route
-            path="/priorauthorization/*"
-            element={<PriorAuthorizationRoutes />}
-          />
-          <Route path="/whymuslims/*" element={<WhyMuslimsRoutes />} />
-          <Route
-            path="/patientcarecoordination/*"
-            element={<PatientCareCoordinationRoutes />}
-          />
+          
         </Route>
 
-        {/* 🔹 Catch all unknown routes */}
         <Route
           path="*"
           element={
