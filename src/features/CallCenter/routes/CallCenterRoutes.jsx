@@ -5,6 +5,7 @@ import CallCenterMain from '../Pages/CallCenterMain'
 import GACalls from '../Pages/GACalls'
 import Calls from '../Pages/Calls'
 import EChecking from '../Pages/EChecking'
+import ITsupport from '../Pages/ITsupport'
 
 const CallCenterRoutes = () => {
   return (
@@ -30,6 +31,12 @@ const CallCenterRoutes = () => {
                 <EChecking />
             </ProtectedRoute>
         }/>
+        <Route path='itsupport'
+        element={
+            <ProtectedRoute>
+                <ITsupport />
+            </ProtectedRoute>
+        } />
     </Routes>
 </> 
   )

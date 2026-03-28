@@ -694,7 +694,7 @@ const DynamicSidebar = () => {
             <Link className="text-center" to={`/${departmentSlug}`}>{departmentName}</Link>
           </SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className='overflow-y-auto'>
               {menus.map((menu) => {
                 const isActive =
                   menu.link &&
@@ -742,7 +742,7 @@ const DynamicSidebar = () => {
 
                 // Regular menu without submenu
                 return (
-                  <SidebarMenuItem key={menu.name}>
+                  <SidebarMenuItem key={menu.name} >
                     <SidebarMenuButton
                       asChild
                       isActive={isActive}
